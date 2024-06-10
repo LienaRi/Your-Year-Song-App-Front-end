@@ -1,15 +1,10 @@
-export type TrackData = {
-    tracks: Track[];
-  };
-  
-export type Track = {
-    albumName: string;
-    imageUrl: string;
-    artists: string;
-    externalUrls: string;
-    href: string;
-    id: string;
-    isPlayable: boolean;
-    name: string;
-    previewUrl: string;
-  };
+export interface Track {
+  albumName: string;
+  imageUrl: string;
+  artists: string;
+  externalUrls: string;
+  id: string;
+  name: string;
+  previewUrl: string;
+  playable: boolean;
+}
