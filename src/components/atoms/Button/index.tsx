@@ -1,14 +1,13 @@
-import "./styles.module.css";
+import style from "./styles.module.css";
 
 interface ButtonProps {
   title: string;
-  className: string;
   onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ title, className, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ title, onClick }) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button className={style['btn']} onClick={onClick}>
       {title}
     </button>
   );

@@ -1,5 +1,6 @@
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import style from './styles.module.css'
 
 interface PlayerProps {
     src: string;
@@ -13,6 +14,9 @@ return (
         onPlay={e => console.log("onPlay")}
         showJumpControls={false}
         showSkipControls={false}
+        customAdditionalControls={[]}
+        customVolumeControls={[]}
+        className={style['player']}
     />
 )};
 export default Player

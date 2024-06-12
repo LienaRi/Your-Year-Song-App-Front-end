@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import InputForm from '../components/atoms/Form';
+import '../index.css'
 
 
 export const Route = createFileRoute("/")({
@@ -10,8 +11,7 @@ export const Route = createFileRoute("/")({
 function Index() {
 
   return (
-    <div>
-      <h1>Your Year Song App</h1>
+    <div className='main-container'>
       <h3>Select a year special for you</h3>
       <h5>Your birth year? Year of your first kiss? Graduation? The choice is yours!</h5>
       <InputForm />

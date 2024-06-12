@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
+import { Route as SearchIndexImport } from './routes/search.index'
 import { Route as SearchYearImport } from './routes/search.$year'
 
 // Create/Update Routes
@@ -24,6 +25,11 @@ const AboutRoute = AboutImport.update({
 
 const IndexRoute = IndexImport.update({
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SearchIndexRoute = SearchIndexImport.update({
+  path: '/search/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -57,6 +63,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SearchYearImport
       parentRoute: typeof rootRoute
     }
+    '/search/': {
+      id: '/search/'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchIndexImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -66,6 +79,7 @@ export const routeTree = rootRoute.addChildren({
   IndexRoute,
   AboutRoute,
   SearchYearRoute,
+  SearchIndexRoute,
 })
 
 /* prettier-ignore-end */
@@ -79,7 +93,8 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/",
         "/about",
-        "/search/$year"
+        "/search/$year",
+        "/search/"
       ]
     },
     "/": {
@@ -90,6 +105,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/search/$year": {
       "filePath": "search.$year.tsx"
+    },
+    "/search/": {
+      "filePath": "search.index.tsx"
     }
   }
 }

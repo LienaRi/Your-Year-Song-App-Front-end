@@ -14,7 +14,8 @@ function InputForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className={style['container']}>
+    <form onSubmit={handleSubmit} >
       <input
         type="number"
         name="year"
@@ -22,9 +23,11 @@ function InputForm() {
         max="2024"
         value={newYear}
         onChange={(e) => setYear(e.target.value)}
+        className={style['bar']}
       />
-      <Button title="Search" className="btn btn-primary" onClick={() => { window.location.href = `/search/${newYear}` }} />
+      <Button title="Search" onClick={() => { window.location.href = `/search/${newYear}` }} />
     </form>
+    </div>
   )
 }
 export default InputForm;

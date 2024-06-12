@@ -1,8 +1,8 @@
-import { Card, Avatar } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { Card } from 'antd';
 import { Link } from '@tanstack/react-router';
 import { Track } from '../../../api/TrackDataType';
 import AudioPlayer from '../AudioPlayer';
+import style from './styles.module.css';
 
 
 interface SongCardProps {
@@ -15,13 +15,11 @@ const SongCard: React.FC<SongCardProps> = ({ song }) => {
             <Card
                 style={{ width: 200 }}
                 cover={<img alt={song.name} src={song.imageUrl} />}
+                className={style['card']}
             >
                 <Link to={song.externalUrls}>
-                <Card.Meta
-                    avatar={<Avatar icon={<UserOutlined />} />}
-                    title={song.name} />
+                <Card.Meta title={song.name} /></Link>
                 <p>Artist: {song.artists}</p>
-                </Link>
                 <p>From album: {song.albumName}</p>
                 <AudioPlayer src={song.previewUrl}/>
             </Card>
