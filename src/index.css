@@ -3,8 +3,13 @@ body {
 }
 
 .main-container {
-    margin: 30px;
+    margin-left: 10%;
+    margin-top: 20px;
     width: 80%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 
 }
@@ -22,8 +27,9 @@ body {
     display: block;
     margin-left: 20px;
     font-variant: all-petite-caps;
+    font-weight: 700;
+    color: #000000;
 }
-
 
 
 .nav-btn {

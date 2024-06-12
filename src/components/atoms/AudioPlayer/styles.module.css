@@ -1,3 +1,4 @@
 .player {
-    font-size: small;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
 }

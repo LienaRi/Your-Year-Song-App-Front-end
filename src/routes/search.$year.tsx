@@ -5,6 +5,7 @@ import Spinner from 'react-bootstrap/esm/Spinner';
 import InputForm from '../components/atoms/Form';
 import CardList from '../components/molecules/CardList';
 import '../index.css'
+import Button from '../components/atoms/Button';
 
 export const Route = createFileRoute('/search/$year')({
   loader: ({ context: { queryClient }, params: { year } }) => {
@@ -37,6 +38,7 @@ function Search() {
       <h6>Listen to a preview or get the real deal on Spotify!</h6>
       <InputForm />
       {data && data.length > 0 ? <CardList data={data} /> : <Spinner />}
+      <Button title="Gimme more" onClick={() => { window.location.href = `/search/${year}` }} ></Button>
     </div>
   )
 }

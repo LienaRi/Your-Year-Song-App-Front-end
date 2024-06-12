@@ -1,4 +1,4 @@
-import AudioPlayer from 'react-h5-audio-player';
+import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import style from './styles.module.css'
 
@@ -16,6 +16,11 @@ return (
         showSkipControls={false}
         customAdditionalControls={[]}
         customVolumeControls={[]}
+        customProgressBarSection={
+            [
+              RHAP_UI.PROGRESS_BAR,
+            ]
+          }
         className={style['player']}
     />
 )};

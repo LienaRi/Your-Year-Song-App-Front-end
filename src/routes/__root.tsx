@@ -11,7 +11,9 @@ export const Route = createRootRoute({
         <Link to="/about" className="nav-btn">
           About
         </Link>
+        <Link to="/" style={{ textDecoration: 'none' }}>
         <h1 className='title'>Your Year Song App</h1>
+          </Link>
       </div>
       <Outlet />
     </>

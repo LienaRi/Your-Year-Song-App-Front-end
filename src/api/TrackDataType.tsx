@@ -7,4 +7,5 @@ export interface Track {
   name: string;
   previewUrl: string;
   playable: boolean;
+  year: string;
 }
